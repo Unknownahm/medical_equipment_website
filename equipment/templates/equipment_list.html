@@ -19,6 +19,9 @@
           <li><a href="#">خانه</a></li>
           <li><a href="#">درباره ما</a></li>
           <li><a href="#">تماس با ما</a></li>
+          <div class="search-container" style="margin-right: 10px;">
+            <input type="text" id="search-input" placeholder="محصول مورد نظر خود را جستجو کنید...">
+          </div>
         </ul>
       </nav>
     </header>
@@ -85,5 +88,35 @@
 
     // Show the .product-box elements on scroll
     document.addEventListener("scroll", showProductBoxes);
+
+    // The scripts for the LIVE SEARCHBAR =>
+
+    // Wait for the page to load
+    window.addEventListener("DOMContentLoaded", () => {
+      const searchInput = document.getElementById("search-input");
+      const productContainer = document.getElementById("product-container");
+      const productBoxes = document.querySelectorAll(".product-box");
+
+      // Function to filter products based on search input
+      const filterProducts = (searchText) => {
+        searchText = searchText.trim().toLowerCase();
+        productBoxes.forEach((box) => {
+          const productName = box
+            .querySelector(".product-name")
+            .innerText.toLowerCase();
+          if (productName.includes(searchText)) {
+            box.style.display = "block";
+          } else {
+            box.style.display = "none";
+          }
+        });
+      };
+
+      // Event listener for search input
+      searchInput.addEventListener("input", (e) => {
+        const searchText = e.target.value;
+        filterProducts(searchText);
+      });
+    });
   </script>
 </html>
