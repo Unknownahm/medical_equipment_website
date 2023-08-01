@@ -1,0 +1,76 @@
+<!-- equipment_list.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Equipment List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'equipment/style.css' %}">
+</head>
+<body>
+
+{% load static %}
+
+<!-- Create a container with a unique ID -->
+<div class="product-container">
+  <!-- Iterate over your product items -->
+  {% for product in equipment %}
+    <div class="product-box">
+      <!-- Product image -->
+      <img class="product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
+      
+      <!-- Product name -->
+      <div class="product-name">{{ product.name }}</div>
+      
+      <!-- Product description -->
+      <div class="product-description">{{ product.description }}</div>
+      
+    </div>
+  {% endfor %}
+</div>
+
+
+
+</body>
+<script>document.addEventListener('DOMContentLoaded', function() {
+  const productBoxes = document.querySelectorAll('.product-box');
+  let delay = 300; // Delay between each product box appearance (in milliseconds)
+  
+  productBoxes.forEach((box, index) => {
+    setTimeout(() => {
+      box.classList.add('product-box-visible');
+    }, index * delay);
+  });
+});
+
+
+
+// Function to check if an element is in the viewport
+function isElementInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// Function to show the .product-box elements in the viewport
+function showProductBoxes() {
+  const productBoxes = document.querySelectorAll('.product-box');
+
+  productBoxes.forEach((box) => {
+    if (isElementInViewport(box)) {
+      box.classList.add('product-box-visible');
+    }
+  });
+}
+
+// Show the .product-box elements on initial page load
+showProductBoxes();
+
+// Show the .product-box elements on scroll
+document.addEventListener('scroll', showProductBoxes);
+
+</script>
+</html>
