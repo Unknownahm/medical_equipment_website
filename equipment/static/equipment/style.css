@@ -1,69 +1,72 @@
-  /* Style for the product container */
-  .product-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    /* gap: 20px;  */
-    /* max-width: 1200px; */
-    margin: 0 auto;
-    padding: 20px;
+/* Style for the product container */
 
-    /* white-space: nowrap; */
-    overflow-x: auto;
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
 
-  }
-  
- 
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  /* gap: 20px;  */
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #FDF6EC;
+  /* white-space: nowrap; */
+  overflow-x: auto;
+}
 
-  /* Style for each product box */
-  .product-box {
-    direction: rtl;
-    width: 300px;
-    margin: 10px; /* Adjust this value to reduce the space between boxes */
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+/* Style for each product box */
+.product-box {
+  background-color: #f5f5f5;
+  direction: rtl;
+  width: 300px;
+  margin: 10px; /* Adjust this value to reduce the space between boxes */
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 
-    opacity: 0;
-    transform: translateX(100%);
-    transition: opacity 0.3s, transform 0.3s;
-    display: inline-block;
-    vertical-align: top;
-  }
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.3s, transform 0.3s;
+  display: inline-block;
+  vertical-align: top;
+}
 
-  .product-box-visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.product-box-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
 
-  /* Style for product image */
-  .product-image {
-    width: 100%;
-    height: 250px;
-    /* object-fit: cover; */
-    border-radius: 5px;
-  }
+/* Style for product image */
+.product-image {
+  width: 100%;
+  height: 250px;
+  /* object-fit: cover; */
+  border-radius: 5px;
+}
 
-  /* Style for product name */
-  .product-name {
-    text-align: center;
-    font-weight: bold;
-    margin-top: 10px;
-    font-family: "B Titr";
-    font-size: 24px;
-  }
+/* Style for product name */
+.product-name {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  font-family: "B Titr";
+  font-size: 24px;
+}
 
-  /* Style for product description */
-  .product-description {
-    margin-top: 5px;
-    text-align: justify;
-    font-size: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    max-height: 200px;
-    overflow-y: scroll;
-  }
-
+/* Style for product description */
+.product-description {
+  margin-top: 5px;
+  text-align: justify;
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  max-height: 200px;
+  overflow-y: scroll;
+}
 
 ::-webkit-scrollbar {
   width: 0.5em; /* Set a width for the scrollbar (adjust as needed) */
@@ -80,9 +83,60 @@
   border: 1px solid rgba(0, 0, 0, 0.2); /* You can change the color and style as you like */
 }
 
-  /* Style for product price */
-  .product-price {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #007bff;
-  }
+/* Style for product price */
+.product-price {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #007bff;
+}
+
+
+.main-header {
+  background-color: #1B1A17;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style the logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Style the navigation menu */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.main-nav li {
+  margin-right: 20px;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Add hover effect for the navigation links */
+.main-nav a:hover {
+  color: #ff6600;
+}
+
+.scrolled {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.main-header {
+  padding-top: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  direction: rtl;
+  font-family: "B Titr";
+}
